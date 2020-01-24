@@ -13,9 +13,9 @@ public class Professor extends Person{
 
     public void markAbiturients(Facultet facultet){
         System.out.println("Choose exam from 0 to " + (facultet.getNumOfExams()-1));
-        for (Result r:facultet.getResultsFrom(TryParse.ParseInt())) {
+        for (Result r:facultet.getResultsFrom(TryParse.ParseInt(0, facultet.getNumOfExams()-1))) {
             System.out.println(r.answer);
-            r.mark = TryParse.ParseInt();
+            r.mark = TryParse.ParseInt(2, 5);
         }
 
 
