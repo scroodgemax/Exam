@@ -1,19 +1,24 @@
-public class Abiturient extends Person {
-private int number;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-public Abiturient(String name, String surname, int number)
+public class Abiturient extends Person {
+private int id;
+public float avgMark;
+
+public Abiturient(String name, String surname, int id)
 {
     super(name, surname);
-    this.number=number;
+    this.id=id;
 }
 
-    public int getNumber() {
-        return number;
+    public int getId() {return id;}
+
+
+    public void answerExams(Facultet facultet){
+        System.out.println("Answer exams");
+        for (int i=0; i<facultet.getNumOfExams(); i++){
+            System.out.print("\n Please, answer exam #" + i + "\n");
+            facultet.getResultsFrom(i).get(id).answer=TryParse.ParseString();
+        }
     }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-
 }
